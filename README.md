@@ -1,2 +1,2 @@
-# mgp188.github.io
+# michael-poole.github.io
 My Personal Website
