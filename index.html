@@ -8,15 +8,53 @@
 <!-- Navigation -->
 <nav class="w3-bar w3-blue">
   <a href="#home" class="w3-button w3-bar-item">Home</a>
-  <a href="#band" class="w3-button w3-bar-item">Bio</a>
+  <a href="#band" class="w3-button w3-bar-item">About Me</a>
   <a href="#tour" class="w3-button w3-bar-item">Resume</a>
   <a href="#contact" class="w3-button w3-bar-item">Contact</a>
 </nav>
 <!-- Slide Show -->
 <section>
-  <img class="mySlides" src="img_la.jpg" style="width:100%">
-  <img class="mySlides" src="img_ny.jpg" style="width:100%">
-  <img class="mySlides" src="img_chicago.jpg" style="width:100%">
+  <p id="demo"></p>
+  
+  <!-- What goes in the demo. -->
+  <script>
+  
+  //Create sentence array
+  var sentences = new Array();
+  var txt1 = 'Hello world...';
+  var btxt1 = '';
+  var txt2 = 'My name is Michael Poole.';
+  var txt3 = 'And I am...';
+  sentences.push(txt1);
+  sentences.push(btxt1);
+  sentences.push(txt2);
+  sentences.push(txt3);
+  sLen = sentences.length;
+    
+  var i = 0;
+  var si = 0;
+  var txt = 'Lorem ipsum typing effect!'; /* The text */
+  var sentSpeed = 2000;
+  var speed = 200; /* The speed/duration of the effect in milliseconds */
+  var currType = "charType";
+  
+  function typeWriter() {
+	if (i < sentences[si].length){
+	  document.getElementById("demo").innerHTML += sentences[si][i];
+      i++;
+	  setTimeout(typeWriter, speed);
+	}
+	else{
+	  si++;
+	  i = 0;
+	  document.getElementById("demo").innerHTML += "<br/>";
+	  setTimeout(typeWriter, sentSpeed);
+	}
+  }
+  
+  window.onload = typeWriter;
+  </script>
+  <img class="mySlides" src="backdropCrop.jpg" style="width:100%">
 </section>
 </body>
 </html>
