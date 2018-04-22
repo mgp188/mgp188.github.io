@@ -2,46 +2,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-<html>
-<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+<html  style="height:100;
+  background: url(collageFull.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+  
+<body style="height:100%;
+	background: rgba(16, 16, 105, 0.7) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;"> 
+
 <!-- Navigation -->
-<nav class="w3-bar w3-blue">
-  <a href="#home" class="w3-button w3-bar-item">Home</a>
-  <a href="#band" class="w3-button w3-bar-item">About Me</a>
-  <a href="#tour" class="w3-button w3-bar-item">Resume</a>
-  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">Michael Poole</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a href="./index.html" class="nav-link">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a href="./background.html" class="nav-link">About Me</a>
+		  </li>
+		  <li class="nav-item">
+			<a href="#resume" class="nav-link">Resume</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#contact">Contact</a>
+		  </li>
+		</ul>
+	</div>
 </nav>
-<!-- Slide Show -->
-<section>
-  <p id="demo"></p>
+
+
+<div  style="min-height: 93vh;
+	margin-top: 7vh">
+<br/>
+<label id="demo" style="font-family:Times New Roman; font-size:7vmin ;color:#f5f5f5; margin-left:10px;"></label>
   
   <!-- What goes in the demo. -->
-  <script>
+<script>
   
   //Create sentence array
   var sentences = new Array();
-  var txt1 = 'Hello world...';
+  var txt1 = "print('Welcome Home!')";
   var btxt1 = '';
-  var txt2 = 'My name is Michael Poole.';
-  var txt3 = 'And I am...';
+  var txt2 = "name = 'Michael Poole'";
+  var txt3 = "titleList = ['student', 'bookworm', 'adventurer', 'computer scientist', 'leader', 'camp counselor', 'friend']";
+  var txt4 = "passion = 'learning'";
+  var txt5 = '';
+  var txt6 = "print('Click \"About Me\" to learn more!')";
   sentences.push(txt1);
   sentences.push(btxt1);
   sentences.push(txt2);
   sentences.push(txt3);
+  sentences.push(txt4);
+  sentences.push(txt5, txt6);
   sLen = sentences.length;
-    
+	
   var i = 0;
   var si = 0;
   var txt = 'Lorem ipsum typing effect!'; /* The text */
-  var sentSpeed = 2000;
-  var speed = 200; /* The speed/duration of the effect in milliseconds */
+  var sentSpeed = 1000;
+  var speed = 100; /* The speed/duration of the effect in milliseconds */
   var currType = "charType";
-  
   function typeWriter() {
 	if (i < sentences[si].length){
 	  document.getElementById("demo").innerHTML += sentences[si][i];
-      i++;
+	  i++;
 	  setTimeout(typeWriter, speed);
 	}
 	else{
@@ -53,8 +95,7 @@
   }
   
   window.onload = typeWriter;
-  </script>
-  <img class="mySlides" src="backdropCrop.jpg" style="width:100%">
-</section>
+</script>
+</div>
 </body>
 </html>
